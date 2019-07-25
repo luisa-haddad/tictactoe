@@ -9,10 +9,11 @@ import { Cell } from './Cell.styled';
 
 export const App: React.FC = () => {
   const [grid, handlePlay] = useTicTacToe();
-  console.log(grid, 'teste')
+  const [clean, setClean] = React.useState(false)
+  console.log(clean, 'clean')
   return (
     <React.Fragment>
-      {/* <Score grid={grid}/> */}
+      <Score grid={grid} setClean={setClean}/>
       <Grid>
         {grid.map((row, rowIndex) => (
           <tr key={rowIndex}>

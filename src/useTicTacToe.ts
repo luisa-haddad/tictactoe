@@ -1,5 +1,4 @@
 import { useState, useCallback } from 'react';
-//import { Score } from './components/Score';
 
 export enum CellValues {
   Empty = 0,
@@ -7,8 +6,8 @@ export enum CellValues {
   O = 'O',
 }
 const GRID_SIZE = 3;
-type GridType = ReadonlyArray<ReadonlyArray<CellValues>>;
-type HandlePlayType = (coordinates: { row: number; cell: number }) => void;
+export type GridType = ReadonlyArray<ReadonlyArray<CellValues>>;
+export type HandlePlayType = (coordinates: { row: number; cell: number }) => void;
 
 export const useTicTacToe = (): [GridType, HandlePlayType] => {
   const [grid, setGrid] = useState<GridType>(
